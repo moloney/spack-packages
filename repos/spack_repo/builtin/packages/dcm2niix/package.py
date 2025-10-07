@@ -33,3 +33,6 @@ class Dcm2niix(CMakePackage):
     depends_on("cxx", type="build")  # generated
 
     depends_on("pkgconfig", type="build")
+
+    def cmake_args(self):
+        return [self.define("USE_STATIC_RUNTIME", "OFF")]
